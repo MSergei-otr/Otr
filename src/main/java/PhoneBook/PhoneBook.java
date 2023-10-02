@@ -4,7 +4,7 @@ import java.io.Console;
 import java.util.*;
 
 public class PhoneBook {
-    private static Map<String, List<String>> phoneBook = new HashMap<>();
+    private static final Map<String, List<String>> phoneBook = new HashMap<>();
 
     static {
         phoneBook.put("Иванов И.И.", Arrays.asList("+8 800 2000 500", "+8 800 200 600"));
@@ -18,7 +18,7 @@ public class PhoneBook {
     }
 
     static String readFio() {
-        String fio = "", encoding;
+        String fio, encoding;
         Console console = System.console();
         if (console != null) {
             encoding = "cp866";
@@ -26,7 +26,7 @@ public class PhoneBook {
             encoding = "utf-8";
         }
         Scanner in = new Scanner(System.in, encoding);
-        boolean isValidFio = false;
+        boolean isValidFio;
         do {
             System.out.print("Введите ФИО: ");
             fio = in.nextLine();
