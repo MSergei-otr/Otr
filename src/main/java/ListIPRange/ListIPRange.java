@@ -24,13 +24,13 @@ public class ListIPRange {
     }
 
     public static void printRange(String fromStrIP, String toStrIP, String rangeStrIP) {
-        int fromRangeInt = Integer.parseInt(fromStrIP.substring(fromStrIP.lastIndexOf(".")+1));
-        int toRangeInt = Integer.parseInt(toStrIP.substring(toStrIP.lastIndexOf(".")+1));
+        int fromRangeInt = Integer.parseInt(fromStrIP.substring(fromStrIP.lastIndexOf(".") + 1));
+        int toRangeInt = Integer.parseInt(toStrIP.substring(toStrIP.lastIndexOf(".") + 1));
 
-        int fromRangeInt1 = Math.min(toRangeInt,Math.min(255,fromRangeInt));
-        int toRangeInt1 = Math.max(fromRangeInt,Math.max(0,toRangeInt));
+        int fromRangeInt1 = Math.min(toRangeInt, Math.min(255, fromRangeInt));
+        int toRangeInt1 = Math.max(fromRangeInt, Math.max(0, toRangeInt));
 
-        for(int ipList=fromRangeInt1+1; ipList<toRangeInt1; ipList++){
+        for (int ipList = fromRangeInt1 + 1; ipList < toRangeInt1; ipList++) {
             System.out.printf("%s.%d%n", rangeStrIP, ipList);
         }
     }

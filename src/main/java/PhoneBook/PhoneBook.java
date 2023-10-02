@@ -5,19 +5,22 @@ import java.util.*;
 
 public class PhoneBook {
     private static Map<String, List<String>> phoneBook = new HashMap<>();
+
     static {
         phoneBook.put("Иванов И.И.", Arrays.asList("+8 800 2000 500", "+8 800 200 600"));
         phoneBook.put("Петров П.П.", Arrays.asList("+8 800 2000 700"));
         phoneBook.put("Сидоров С.С.", Arrays.asList("+8 800 2000 800", "+8 800 2000 900", "+8 800 2000 000"));
     }
+
     public static void main(String[] args) {
         String fio = readFio();
         printPhones(fio);
     }
+
     static String readFio() {
         String fio = "", encoding;
         Console console = System.console();
-        if (console!=null) {
+        if (console != null) {
             encoding = "cp866";
         } else {
             encoding = "utf-8";
@@ -33,12 +36,12 @@ public class PhoneBook {
                 System.out.println("ФИО не найдено в базе");
             }
         }
-        while (!isValidFio) ;
+        while (!isValidFio);
         return fio;
     }
 
     static void printPhones(String fio) {
-        for (String phone: phoneBook.get(fio)
+        for (String phone : phoneBook.get(fio)
         ) {
             System.out.println(String.format("%s", phone));
         }
