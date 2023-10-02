@@ -9,6 +9,7 @@ public class ListIPRange {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String ipBegin, ipEnd, ipStartRange;
+
         do {
             System.out.print("IP from (X.X.X.X): ");
             ipBegin = in.next();
